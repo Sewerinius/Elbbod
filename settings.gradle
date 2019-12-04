@@ -1,2 +1,5 @@
 rootProject.name = 'dobble'
+include 'dobble-server'
+include 'dobble-client'
+include 'dobble-common'
 
