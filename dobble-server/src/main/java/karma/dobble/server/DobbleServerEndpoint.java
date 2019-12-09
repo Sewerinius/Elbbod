@@ -32,9 +32,7 @@ public class DobbleServerEndpoint {
         chatEndpoints.add(this);
         users.put(session.getId(), username);
 
-        Message message = new Message();
-        message.setFrom(username);
-        message.setContent("Connected!\n" + System.getProperty("user.dir"));
+        Message message = new Message(username, null, "Connected!\n" + System.getProperty("user.dir"));
         try {
             broadcast(message);
         } catch (EncodeException e) {
@@ -46,9 +44,9 @@ public class DobbleServerEndpoint {
     public void onMessage(Session session, Message message)
             throws IOException {
 
-        message.setFrom(users.get(session.getId()));
+        Message newMessage = new Message(users.get(session.getId()), message.getTo(), message.getContent());
         try {
-            broadcast(message);
+            broadcast(newMessage);
         } catch (EncodeException e) {
             e.printStackTrace();
         }
@@ -58,9 +56,7 @@ public class DobbleServerEndpoint {
     public void onClose(Session session) throws IOException {
 
         chatEndpoints.remove(this);
-        Message message = new Message();
-        message.setFrom(users.get(session.getId()));
-        message.setContent("Disconnected!");
+        Message message = new Message(users.get(session.getId()), null, "Disconnected!");
         try {
             broadcast(message);
         } catch (EncodeException e) {
