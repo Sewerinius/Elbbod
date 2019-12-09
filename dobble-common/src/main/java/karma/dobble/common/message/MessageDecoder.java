@@ -17,7 +17,7 @@ public class MessageDecoder implements Decoder.Text<Message> {
 
     @Override
     public boolean willDecode(String s) {
-        return (s != null);
+        return s != null;
     }
 
     @Override

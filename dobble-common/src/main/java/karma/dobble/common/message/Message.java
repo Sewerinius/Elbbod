@@ -1,9 +1,15 @@
 package karma.dobble.common.message;
 
 public class Message {
-    private String from;
-    private String to;
-    private String content;
+    final private String from;
+    final private String to;
+    final private String content;
+
+    public Message(String from, String to, String content) {
+        this.from = from;
+        this.to = to;
+        this.content = content;
+    }
 
     @Override
     public String toString() {
@@ -14,23 +20,11 @@ public class Message {
         return from;
     }
 
-    public void setFrom(String from) {
-        this.from = from;
-    }
-
     public String getTo() {
         return to;
     }
 
-    public void setTo(String to) {
-        this.to = to;
-    }
-
     public String getContent() {
         return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
     }
 }
