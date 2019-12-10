@@ -8,5 +8,7 @@ public class Card {
 
     public Card(){
         this.cardElements = new HashSet<>();
+
+
     }
 }

@@ -1,6 +1,6 @@
 package karma.dobble.client;
 
-import karma.dooble.common.*;
+import karma.dooble.common.CardElement;
 
 public interface ServerConnection {
     void connect(Player player);
