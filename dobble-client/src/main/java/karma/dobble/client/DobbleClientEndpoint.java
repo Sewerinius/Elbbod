@@ -17,15 +17,11 @@ public class DobbleClientEndpoint {
 
     private String name;
 
-    public DobbleClientEndpoint(String name) {
+    public DobbleClientEndpoint(String name) throws URISyntaxException, IOException, DeploymentException {
         this.name = name;
 
         WebSocketContainer container = ContainerProvider.getWebSocketContainer();
-        try {
-            container.connectToServer(this, new URI(WS_URI + name));
-        } catch (DeploymentException | IOException | URISyntaxException e) {
-            e.printStackTrace();
-        }
+        container.connectToServer(this, new URI(WS_URI + name));
     }
 
     @OnOpen
