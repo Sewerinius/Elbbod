@@ -4,6 +4,7 @@ import karma.dobble.common.message.Message;
 import karma.dobble.common.message.MessageDecoder;
 import karma.dobble.common.message.MessageEncoder;
 
+
 import javax.websocket.*;
 import java.io.IOException;
 import java.net.URI;
@@ -38,11 +39,9 @@ public class DobbleClientEndpoint {
         System.out.println(message.getContent());
     }
 
+
     public void sendMessage(String content) {
-        Message message = new Message();
-        message.setFrom(name);
-        message.setContent(content);
-        message.setTo("undefined");
+        Message message = new Message(name, "undefined", content);
         try {
             session.getBasicRemote().sendObject(message);
         } catch (EncodeException | IOException e) {
