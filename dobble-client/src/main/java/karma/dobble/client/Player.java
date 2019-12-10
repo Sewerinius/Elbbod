@@ -2,13 +2,17 @@ package karma.dobble.client;
 
 import karma.dooble.common.Card;
 
+import javax.websocket.DeploymentException;
+import java.io.IOException;
+import java.net.URISyntaxException;
+
 public class Player {
     private String name;
     private Card heldCard;
     private int points;
     private ServerConnection serverConnection;
 
-    public Player(String name){
+    public Player(String name) throws DeploymentException, IOException, URISyntaxException {
         this.name = name;
         this.points = 0;
         this.serverConnection = new WebsocketConnection();
