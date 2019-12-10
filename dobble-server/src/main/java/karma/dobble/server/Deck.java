@@ -11,7 +11,7 @@ public class Deck {
     private int CARD_NUMBER = -1;
 
     public Deck(Set<Card> cards){
-
+        this.cards = cards;
     }
 
     public Deck(){
