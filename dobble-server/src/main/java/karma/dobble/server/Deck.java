@@ -3,11 +3,12 @@ package karma.dobble.server;
 import karma.dooble.common.*;
 
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 public class Deck {
     private Set<Card> cards;
-    private static int CARD_NUMBER = -1;
+    private int CARD_NUMBER = -1;
 
     public Deck(Set<Card> cards){
 
@@ -20,13 +21,13 @@ public class Deck {
         this.cards = new HashSet<>();
     }
 
-    public Card drawCard(){
+    public Optional<Card> drawCard(){
         if(this.cards != null && !cards.isEmpty()){
             Card resultCard = (Card)cards.toArray()[0];
             cards.remove(resultCard);
-            return resultCard;
+            return Optional.of(resultCard);
         }
-        return null;
+        return Optional.empty();
     }
 
     public void shuffle(){

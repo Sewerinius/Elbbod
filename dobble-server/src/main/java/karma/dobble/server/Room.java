@@ -23,10 +23,12 @@ public class Room {
     public void startGame(){
         deckInit();
         deck.shuffle();
-        this.currentCard = deck.drawCard();
-        if(currentCard == null){
-            System.out.println("Game over :)");
-        }
+
+        Optional<Card> drawnCard = deck.drawCard();
+        if(drawnCard.isPresent())
+            this.currentCard = drawnCard.get();
+        else
+            System.out.println("game over :)");
     }
 
     private void deckInit(){
