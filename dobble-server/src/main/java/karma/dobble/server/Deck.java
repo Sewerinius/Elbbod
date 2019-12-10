@@ -59,9 +59,6 @@ public class Deck {
         cards = getCardSet(n);
     }
 
-    public Deck(Set<Card> cards){ //TODO: Delete, because i don't like it
-        this.cards = cards;
-    }
 
     public Deck(){ //TODO: This as well
         this.cards = new HashSet<>();
