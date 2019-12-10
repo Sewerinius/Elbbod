@@ -59,10 +59,9 @@ public class Deck {
         cards = getCardSet(n);
     }
 
+    Deck(){cards = null;}
 
-    public Deck(){ //TODO: This as well
-        this.cards = new HashSet<>();
-    }
+
 
     public Optional<Card> drawCard(){
         if(this.cards != null && !cards.isEmpty()){

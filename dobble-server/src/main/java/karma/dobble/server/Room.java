@@ -5,10 +5,11 @@ import karma.dooble.common.*;
 import java.util.*;
 
 public class Room {
+    private int symbolsPerCard = 5;
     private String name;
     private int maxPlayers;
     private List<Player> players;
-    private Deck deck;
+    private Deck deck = null;
     private Card currentCard;
 
     public Room(){
@@ -21,8 +22,7 @@ public class Room {
     }
 
     public void startGame(){
-        deckInit();
-        deck.shuffle();
+        deck = new Deck(5);
 
         Optional<Card> drawnCard = deck.drawCard();
         if(drawnCard.isPresent())
@@ -31,7 +31,8 @@ public class Room {
             System.out.println("game over :)");
     }
 
-    private void deckInit(){
 
+    public void setSymbolsPerCard(int symbolsPerCard) {
+        this.symbolsPerCard = symbolsPerCard;
     }
 }
