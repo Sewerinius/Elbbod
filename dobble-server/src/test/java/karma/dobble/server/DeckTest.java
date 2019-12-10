@@ -4,7 +4,9 @@ import karma.dooble.common.Card;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
+import java.lang.reflect.Field;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
@@ -42,13 +44,22 @@ class DeckTest {
     }
 
     @Test
-    void drawCard() {
+    void drawCard() throws NoSuchFieldException, IllegalAccessException {
         //given
         Set<Card> testCards = new HashSet<>();
         Set<Card> emptyCardsSet = new HashSet<>();
-        testCards.add(new Card(new HashSet<>()));
-        Deck emptyDeck = new Deck(emptyCardsSet);
-        Deck testDeck = new Deck(testCards);
+        testCards.add(new Card());
+
+        Field deckCards = Deck.class.getDeclaredField("cards");
+        deckCards.setAccessible(true);
+
+        Deck emptyDeck = new Deck();
+        deckCards.set(emptyDeck, emptyCardsSet);
+
+        Deck testDeck = new Deck();
+        deckCards.set(testDeck, testCards);
+
+        deckCards.setAccessible(false);
         //when
         Optional<Card> emptyOptional = emptyDeck.drawCard();
         Optional<Card> cardOptional = testDeck.drawCard();
