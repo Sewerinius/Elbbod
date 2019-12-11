@@ -22,7 +22,7 @@ public class Room {
     }
 
     public void startGame(){
-        deck = new Deck(5);
+        deck = new Deck(symbolsPerCard);
 
         Optional<Card> drawnCard = deck.drawCard();
         if(drawnCard.isPresent())

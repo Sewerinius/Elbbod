@@ -10,15 +10,10 @@ import java.net.URISyntaxException;
 public class WebsocketConnection implements ServerConnection {
     private DobbleClientEndpoint dobbleClientEndpoint;
 
-    public WebsocketConnection(){
-        this.dobbleClientEndpoint = null;
-    }
 
     @Override
     public void connect(Player player) throws DeploymentException, IOException, URISyntaxException {
-        if(dobbleClientEndpoint != null)
-            dobbleClientEndpoint = new DobbleClientEndpoint(player.getName());
-
+        dobbleClientEndpoint = new DobbleClientEndpoint(player.getName());
     }
 
     @Override

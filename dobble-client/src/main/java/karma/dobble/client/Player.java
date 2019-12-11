@@ -7,10 +7,10 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 
 public class Player {
-    private String name;
-    private Card heldCard;
-    private int points;
-    private ServerConnection serverConnection;
+    String name;
+    Card heldCard;
+    int points;
+    ServerConnection serverConnection;
 
     public Player(String name) throws DeploymentException, IOException, URISyntaxException {
         this.name = name;
