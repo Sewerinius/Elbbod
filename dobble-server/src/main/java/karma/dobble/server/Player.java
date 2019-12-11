@@ -1,6 +1,6 @@
 package karma.dobble.server;
 
-import karma.dooble.common.Card;
+import karma.dooble.common.model.Card;
 
 import javax.websocket.Session;
 

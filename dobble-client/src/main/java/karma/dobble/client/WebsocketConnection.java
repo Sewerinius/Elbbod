@@ -1,6 +1,6 @@
 package karma.dobble.client;
 
-import karma.dooble.common.CardElement;
+import karma.dooble.common.model.CardElement;
 
 import javax.websocket.DeploymentException;
 import java.io.IOException;

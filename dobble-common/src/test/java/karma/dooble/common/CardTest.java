@@ -1,5 +1,7 @@
 package karma.dooble.common;
 
+import karma.dooble.common.model.Card;
+import karma.dooble.common.model.CardElement;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
