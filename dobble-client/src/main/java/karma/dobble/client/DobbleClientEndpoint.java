@@ -33,6 +33,7 @@ public class DobbleClientEndpoint {
     @OnMessage
     public void onMessage(Message message) {
         System.out.println(message.getContent());
+        System.out.println("Test");
     }
 
 
