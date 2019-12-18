@@ -1,4 +1,4 @@
-package karma.dooble.common.model;
+package karma.dobble.common.model;
 
 import java.util.Collections;
 import java.util.Set;

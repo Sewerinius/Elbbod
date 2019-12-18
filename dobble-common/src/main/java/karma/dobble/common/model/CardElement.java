@@ -1,4 +1,4 @@
-package karma.dooble.common.model;
+package karma.dobble.common.model;
 
 public class CardElement {
     private final int ID;

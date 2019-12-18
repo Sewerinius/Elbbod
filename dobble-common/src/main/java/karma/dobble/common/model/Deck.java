@@ -1,7 +1,4 @@
-package karma.dooble.common.model;
-
-import karma.dooble.common.model.Card;
-import karma.dooble.common.model.CardElement;
+package karma.dobble.common.model;
 
 import java.util.*;
 

@@ -2,7 +2,6 @@ package karma.dobble.client.utils;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import karma.dobble.client.scene.Lobby;
 
 import java.io.IOException;
 

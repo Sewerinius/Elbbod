@@ -1,15 +1,12 @@
 package karma.dobble.client.components;
 
 import javafx.beans.binding.Bindings;
-import javafx.beans.binding.DoubleBinding;
-import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import karma.dobble.client.utils.FXMLUtils;
-import karma.dooble.common.model.Card;
-import karma.dooble.common.model.CardElement;
+import karma.dobble.common.model.Card;
+import karma.dobble.common.model.CardElement;
 
 public class CardComponent extends Pane {
     private Card card;

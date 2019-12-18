@@ -2,8 +2,7 @@ package karma.dobble.client;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-import karma.dobble.client.scene.GameScene;
-import karma.dobble.client.scene.Lobby;
+import karma.dobble.client.scene.LobbyScene;
 
 public class DobbleApp extends Application {
     public static void main(String[] args) {
@@ -20,8 +19,8 @@ public class DobbleApp extends Application {
 //        this.appController = new AppController(primaryStage);
 //        this.appController.initRootLayout();
 
-        Lobby lobby = Lobby.getInstance();
-        primaryStage.setScene(lobby.getScene());
+        LobbyScene lobbyScene = LobbyScene.getInstance();
+        lobbyScene.displayOn(primaryStage);
         primaryStage.show();
     }
 }

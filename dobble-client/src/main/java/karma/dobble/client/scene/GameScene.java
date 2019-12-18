@@ -2,12 +2,11 @@ package karma.dobble.client.scene;
 
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import karma.dobble.client.components.CardComponent;
 import karma.dobble.client.utils.FXMLUtils;
-import karma.dooble.common.model.Deck;
+import karma.dobble.common.model.Deck;
 
 public class GameScene extends VBox {
     private static GameScene instance;
@@ -20,6 +19,7 @@ public class GameScene extends VBox {
         return instance;
     }
 
+    private Stage stage;
     private Scene scene;
 
     @FXML
@@ -40,5 +40,10 @@ public class GameScene extends VBox {
 
         playerCard.setCard(deck.drawCard().get());
         globalCard.setCard(deck.drawCard().get());
+    }
+
+    public void displayOn(Stage stage) {
+        this.stage = stage;
+        this.stage.setScene(scene);
     }
 }
