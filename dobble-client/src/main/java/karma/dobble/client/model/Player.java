@@ -1,5 +1,7 @@
-package karma.dobble.client;
+package karma.dobble.client.model;
 
+import karma.dobble.client.connection.ServerConnection;
+import karma.dobble.client.connection.WebsocketConnection;
 import karma.dooble.common.model.Card;
 
 import javax.websocket.DeploymentException;

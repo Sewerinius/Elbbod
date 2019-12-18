@@ -1,4 +1,4 @@
-package karma.dobble.client;
+package karma.dobble.client.connection;
 
 import karma.dobble.common.message.Message;
 import karma.dobble.common.message.MessageDecoder;

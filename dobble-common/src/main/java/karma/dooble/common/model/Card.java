@@ -6,9 +6,11 @@ import java.util.Set;
 public class Card {
     private final Set<CardElement> cardElements;
 
-    Card(){cardElements = null;}
+    Card() {
+        cardElements = null;
+    }
 
-    public Card(Set<CardElement> elements){
+    public Card(Set<CardElement> elements) {
         this.cardElements = elements;
     }
 

@@ -1,4 +1,4 @@
-package karma.dobble.client;
+package karma.dobble.client.model;
 
 
 import javax.websocket.DeploymentException;
