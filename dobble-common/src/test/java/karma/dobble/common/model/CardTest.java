@@ -1,4 +1,4 @@
-package karma.dooble.common;
+package karma.dobble.common.model;
 
 import karma.dobble.common.model.Card;
 import karma.dobble.common.model.CardElement;

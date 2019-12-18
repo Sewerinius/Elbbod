@@ -1,7 +1,5 @@
-package karma.dobble.server;
+package karma.dobble.common.model;
 
-import karma.dobble.common.model.Card;
-import karma.dobble.common.model.Deck;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
