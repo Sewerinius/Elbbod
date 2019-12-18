@@ -1,4 +1,4 @@
-package karma.dobble.server;
+package karma.dooble.common.model;
 
 import karma.dooble.common.model.Card;
 import karma.dooble.common.model.CardElement;
@@ -9,7 +9,7 @@ public class Deck {
     private static Map<Integer, Set<Card>> cardSets = new HashMap<>();
 
     private static Set<Card> generateCardSet(int k) {
-        int symbolsCount = k * (k-1) + 1;
+        int symbolsCount = k * (k - 1) + 1;
         List<CardElement> elements = new ArrayList<>(symbolsCount);
         for (int i = 0; i < symbolsCount; i++) {
             elements.add(new CardElement(i));
@@ -25,7 +25,7 @@ public class Deck {
         }
 
         for (int i = 0; i < k; i++) {
-            for (int j = 0; j < k-1; j++) {
+            for (int j = 0; j < k - 1; j++) {
                 Set<CardElement> elementsUsed = new HashSet<>();
                 Set<CardElement> cardElements = new HashSet<>();
                 for (int l = i; l < symbolsCount; l++) {
@@ -60,20 +60,20 @@ public class Deck {
         cards = getCardSet(n);
     }
 
-    Deck(){cards = null;}
+    Deck() {
+        cards = null;
+    }
 
-
-
-    public Optional<Card> drawCard(){
-        if(this.cards != null && !cards.isEmpty()){
-            Card resultCard = (Card)cards.toArray()[0];
+    public Optional<Card> drawCard() {
+        if (this.cards != null && !cards.isEmpty()) {
+            Card resultCard = (Card) cards.toArray()[0];
             cards.remove(resultCard);
             return Optional.of(resultCard);
         }
         return Optional.empty();
     }
 
-    public void shuffle(){
+    public void shuffle() {
         //TODO
     }
 

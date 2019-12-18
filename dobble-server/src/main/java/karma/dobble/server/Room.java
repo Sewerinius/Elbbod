@@ -1,6 +1,7 @@
 package karma.dobble.server;
 
 import karma.dooble.common.model.Card;
+import karma.dooble.common.model.Deck;
 
 import java.util.*;
 

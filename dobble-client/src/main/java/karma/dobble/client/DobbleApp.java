@@ -3,8 +3,9 @@ package karma.dobble.client;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import karma.dobble.client.controller.AppController;
+import karma.dobble.client.scene.GameScene;
 
-public class HelloFXML extends Application {
+public class DobbleApp extends Application {
     public static void main(String[] args) {
         Application.launch(args);
     }
@@ -17,7 +18,10 @@ public class HelloFXML extends Application {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("FXML Test123");
 
-        this.appController = new AppController(primaryStage);
-        this.appController.initRootLayout();
+//        this.appController = new AppController(primaryStage);
+//        this.appController.initRootLayout();
+        GameScene gameScene = GameScene.getInstance();
+        primaryStage.setScene(gameScene.getScene());
+        primaryStage.show();
     }
 }

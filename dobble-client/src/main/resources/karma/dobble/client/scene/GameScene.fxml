@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import karma.dobble.client.components.*?>
+
+<fx:root prefHeight="400.0" prefWidth="600.0" type="VBox" xmlns="http://javafx.com/javafx/10.0.2-internal"
+         xmlns:fx="http://javafx.com/fxml/1" fx:controller="karma.dobble.client.scene.GameScene">
+    <children>
+        <Label BorderPane.alignment="CENTER">"Test"</Label>
+        <HBox>
+            <children>
+                <CardComponent fx:id="playerCard" HBox.hgrow="ALWAYS" style="-fx-border-color: black;"/>
+                <CardComponent fx:id="globalCard" HBox.hgrow="ALWAYS" style="-fx-border-color: black;"/>
+            </children>
+        </HBox>
+    </children>
+</fx:root>
