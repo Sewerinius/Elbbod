@@ -9,15 +9,15 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 
 public class Player {
-    String name;
-    Card heldCard;
-    int points;
-    ServerConnection serverConnection;
+    private String name;
+    private Card heldCard;
+    private int points;
+    private ServerConnection serverConnection;
 
-    public Player(String name) throws DeploymentException, IOException, URISyntaxException {
+    public Player(String name, ServerConnection connection) throws DeploymentException, IOException, URISyntaxException {
         this.name = name;
         this.points = 0;
-        this.serverConnection = new WebsocketConnection();
+        this.serverConnection = connection;
 
         this.serverConnection.connect(this);
     }

@@ -22,42 +22,16 @@ class DeckTest {
     }
 
     @Test
-    void generateCards() {
-        //given
-        int n = 3;
-        int cardCount = n * (n-1) + 1;
-        //when
-        Deck deck = new Deck(n);
-        Set<Card> cards = deck.getCards();
-
-        for (Card card : cards) {
-            System.out.println(card.toString());
-        }
-
-        //then
-        assertEquals(cardCount, cards.size());
-        for (Card card : cards) {
-            assertEquals(n, card.getCardElements().size());
-        }
-    }
-
-    @Test
     void drawCardEmpty() throws NoSuchFieldException, IllegalAccessException {
         //given
         Set<Card> testCards = new HashSet<>();
         Set<Card> emptyCardsSet = new HashSet<>();
         testCards.add(new Card(new HashSet<>()));
 
-        Field deckCards = Deck.class.getDeclaredField("cards");
-        deckCards.setAccessible(true);
+        Deck emptyDeck = new Deck(emptyCardsSet);
 
-        Deck emptyDeck = new Deck();
-        deckCards.set(emptyDeck, emptyCardsSet);
+        Deck testDeck = new Deck(testCards);
 
-        Deck testDeck = new Deck();
-        deckCards.set(testDeck, testCards);
-
-        deckCards.setAccessible(false);
         //when
         Optional<Card> emptyOptional = emptyDeck.drawCard();
         Optional<Card> cardOptional = testDeck.drawCard();
@@ -87,12 +61,7 @@ class DeckTest {
         beginCards.add(c4);
         beginCards.add(c5);
 
-        Deck testDeck = new Deck();
-
-        Field cardsField = Deck.class.getDeclaredField("cards");
-        cardsField.setAccessible(true);
-        cardsField.set(testDeck, someCards);
-        cardsField.setAccessible(false);
+        Deck testDeck = new Deck(someCards);
 
         //then
         while(true){
