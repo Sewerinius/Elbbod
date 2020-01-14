@@ -45,6 +45,7 @@ public class DobbleServerEndpoint {
             throws IOException {
 
         Message newMessage = new Message(users.get(session.getId()), message.getTo(), message.getContent());
+
         try {
             broadcast(newMessage);
         } catch (EncodeException e) {
@@ -71,6 +72,8 @@ public class DobbleServerEndpoint {
 
     private static void broadcast(Message message)
             throws IOException, EncodeException {
+
+        System.out.println(chatEndpoints);
 
         chatEndpoints.forEach(endpoint -> {
             synchronized (endpoint) {

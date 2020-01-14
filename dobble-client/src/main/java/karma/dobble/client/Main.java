@@ -1,9 +1,14 @@
 package karma.dobble.client;
 
+import karma.dobble.client.connection.DobbleClientEndpoint;
+
+import javax.websocket.DeploymentException;
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws DeploymentException, IOException, URISyntaxException {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Dobble client");
