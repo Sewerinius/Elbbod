@@ -7,18 +7,9 @@ import javafx.stage.Stage;
 import karma.dobble.client.components.CardComponent;
 import karma.dobble.client.utils.FXMLUtils;
 import karma.dobble.common.model.Deck;
+import karma.dobble.common.model.DeckGenerator;
 
 public class GameScene extends VBox {
-    private static GameScene instance;
-
-
-    public static GameScene getInstance() {
-        if (instance == null) {
-            instance = new GameScene();
-        }
-        return instance;
-    }
-
     private Stage stage;
     private Scene scene;
 
@@ -32,11 +23,19 @@ public class GameScene extends VBox {
         FXMLUtils.loadFXML(this);
     }
 
+    private static class LazyHolder {
+        static final GameScene INSTANCE = new GameScene();
+    }
+
+    public static GameScene getInstance() {
+        return LazyHolder.INSTANCE;
+    }
+
     @FXML
     public void initialize() {
         this.scene = new Scene(this, 800, 600);
 
-        Deck deck = new Deck(5);
+        Deck deck = new Deck(new DeckGenerator().getCardSetCopy(5));
 
         playerCard.setCard(deck.drawCard().get());
         globalCard.setCard(deck.drawCard().get());

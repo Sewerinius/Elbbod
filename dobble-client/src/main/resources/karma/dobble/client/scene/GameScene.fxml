@@ -4,14 +4,13 @@
 <?import javafx.scene.layout.*?>
 <?import karma.dobble.client.components.*?>
 
-<fx:root prefHeight="400.0" prefWidth="600.0" type="VBox" xmlns="http://javafx.com/javafx/10.0.2-internal"
-         xmlns:fx="http://javafx.com/fxml/1" fx:controller="karma.dobble.client.scene.GameScene">
+<fx:root prefHeight="400.0" prefWidth="600.0" type="VBox" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="karma.dobble.client.scene.GameScene">
     <children>
-        <Label BorderPane.alignment="CENTER">"Test"</Label>
-        <HBox>
+        <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" text="Game" textAlignment="CENTER" BorderPane.alignment="CENTER">"Test"</Label>
+        <HBox VBox.vgrow="ALWAYS">
             <children>
-                <CardComponent fx:id="playerCard" HBox.hgrow="ALWAYS" style="-fx-border-color: black;"/>
-                <CardComponent fx:id="globalCard" HBox.hgrow="ALWAYS" style="-fx-border-color: black;"/>
+                <CardComponent fx:id="playerCard" style="-fx-border-color: black;" HBox.hgrow="ALWAYS" />
+                <CardComponent fx:id="globalCard" style="-fx-border-color: black;" HBox.hgrow="ALWAYS" />
             </children>
         </HBox>
     </children>

@@ -1,7 +1,5 @@
 package karma.dobble.common.model;
 
-import karma.dobble.common.model.Card;
-import karma.dobble.common.model.CardElement;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -44,25 +42,25 @@ class CardTest {
         cardElementsField.set(card, cardElements);
         cardElementsField.setAccessible(false);
 
-        when(cardElement1.getID()).thenReturn(1);
-        when(cardElement2.getID()).thenReturn(2);
-        when(cardElement3.getID()).thenReturn(3);
-        when(cardElement4.getID()).thenReturn(4);
+        when(cardElement1.getId()).thenReturn(1);
+        when(cardElement2.getId()).thenReturn(2);
+        when(cardElement3.getId()).thenReturn(3);
+        when(cardElement4.getId()).thenReturn(4);
         //when
-        int cardID1 = cardElement1.getID();
-        int cardID2 = cardElement2.getID();
-        int cardID3 = cardElement3.getID();
-        int cardID4 = cardElement4.getID();
+        int cardID1 = cardElement1.getId();
+        int cardID2 = cardElement2.getId();
+        int cardID3 = cardElement3.getId();
+        int cardID4 = cardElement4.getId();
 
         CardElement cardElement5 = Mockito.mock(CardElement.class);
-        when(cardElement5.getID()).thenReturn(5);
-        int notID = cardElement5.getID();
+        when(cardElement5.getId()).thenReturn(5);
+        int notID = cardElement5.getId();
         //then
-        assertEquals(true, card.contains(cardID1));
-        assertEquals(true, card.contains(cardID2));
-        assertEquals(true, card.contains(cardID3));
-        assertEquals(true, card.contains(cardID4));
-        assertEquals(false, card.contains(notID));
+        assertTrue(card.contains(cardID1));
+        assertTrue(card.contains(cardID2));
+        assertTrue(card.contains(cardID3));
+        assertTrue(card.contains(cardID4));
+        assertFalse(card.contains(notID));
     }
 
     @Test
@@ -92,13 +90,10 @@ class CardTest {
         //when
         Set<CardElement> returnedElements = card.getCardElements();
         //then
-        Iterator<CardElement> itrReturnedElements = returnedElements.iterator();
-        while(itrReturnedElements.hasNext()){
-            CardElement element = itrReturnedElements.next();
-            if(!beginElements.contains(element))fail();
+        for (CardElement element : returnedElements) {
+            assertTrue(beginElements.contains(element));
             beginElements.remove(element);
         }
-        if(beginElements.isEmpty())return;
-        fail();
+        assertTrue(beginElements.isEmpty());
     }
 }

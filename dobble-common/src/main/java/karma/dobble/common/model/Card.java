@@ -11,16 +11,15 @@ public class Card {
     }
 
     public Card(Set<CardElement> elements) {
-        this.cardElements = elements;
+        this.cardElements = Set.copyOf(elements);
     }
 
     public boolean contains(int id) {
-        return cardElements.stream().anyMatch(cardElement -> cardElement.getID() == id);
+        return cardElements.stream().anyMatch(cardElement -> cardElement.getId() == id);
     }
 
-    //Returns card elements as an unmodifiable set
     public Set<CardElement> getCardElements() {
-        return Collections.unmodifiableSet(cardElements);
+        return cardElements;
     }
 
     @Override

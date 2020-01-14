@@ -1,18 +1,18 @@
 package karma.dobble.common.model;
 
 public class CardElement {
-    private final int ID;
+    private final int id;
 
-    public CardElement(int ID) {
-        this.ID = ID;
+    public CardElement(int id) {
+        this.id = id;
     }
 
-    public int getID() {
-        return ID;
+    public int getId() {
+        return id;
     }
 
     @Override
     public String toString() {
-        return Integer.toString(ID);
+        return Integer.toString(id);
     }
 }
